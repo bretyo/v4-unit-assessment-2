@@ -62,7 +62,7 @@ main{
     justify-content: center;
     position: relative;
     height: 1200px;
-    width:  70%;
+    min-width:  70%;
 }
 
 .left{
