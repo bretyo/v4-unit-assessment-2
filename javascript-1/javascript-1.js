@@ -9,6 +9,7 @@
 */
 
 //CODE HERE
+const myArr = [4, 'abc', ['cat', 'dog', 'bird'], 77];
 
 
 ////////////////////PROBLEM 2////////////////////
@@ -21,6 +22,7 @@
 const nestedLetters = ['m', 'g', 'e', 'q', 'h', ['n', 'b', ['v', 'z', 'y', 'r']], 'a']
 
 //CODE HERE
+const foundZ = nestedLetters[5][2][1];
 
 
 ////////////////////PROBLEM 3////////////////////
@@ -37,6 +39,7 @@ const desert = ['rattlesnake', 'coyote']
 //DO NOT EDIT CODE ABOVE
 
 //CODE HERE
+const animals = [...forest, ...ocean, ...savannah, ...desert];
 
 
 /*
@@ -45,7 +48,7 @@ const desert = ['rattlesnake', 'coyote']
 */
 
 //CODE HERE
-
+const animalsCopy = [...animals, 'elephant'];
 
 ////////////////////PROBLEM 4////////////////////
 /*
@@ -56,7 +59,7 @@ const desert = ['rattlesnake', 'coyote']
 */
 
 //CODE HERE
-
+const compareNums = (num1, num2) => num1 > num2 ? num1 : num2;
   
 ////////////////////PROBLEM 5////////////////////
 /*
@@ -68,7 +71,7 @@ const desert = ['rattlesnake', 'coyote']
 */
 
 //CODE HERE
-  
+  const bestMovie = (movie) => movie + " is the best movie ever!";
   
 ////////////////////PROBLEM 6////////////////////
 /*
@@ -76,7 +79,7 @@ const desert = ['rattlesnake', 'coyote']
 */
 
 //CODE HERE
-  
+ const jsNinja = ()=> 'I am a JavaScript ninja!'; 
 
 ////////////////////PROBLEM 7////////////////////
 
@@ -97,7 +100,7 @@ const desert = ['rattlesnake', 'coyote']
 */
 
 //CODE HERE
-  
+  delete gameInfo.rating;
 
 ////////////////////PROBLEM 8////////////////////
 
@@ -120,7 +123,9 @@ const desert = ['rattlesnake', 'coyote']
 
 //CODE HERE
   
-  
+  for(let prop in shapes){
+      shapes[prop] % 2 !== 0 ? (delete shapes[prop]) : null;
+  }
 ////////////////////PROBLEM 9////////////////////
 
 //DO NOT EDIT CODE BELOW
@@ -161,7 +166,12 @@ const classes = [
 */
 
 //CODE HERE
-
+for (let i = 0; i < classes.length; i++) {
+    for (let prop in classes[i]) {
+        if(classes[i][prop] === true) classes[i][prop] = false;
+    }
+    
+}
   
 ////////////////////PROBLEM 10////////////////////
 /*
