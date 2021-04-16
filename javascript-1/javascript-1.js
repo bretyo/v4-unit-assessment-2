@@ -187,7 +187,13 @@ let pairsArray = []
 //DO NOT EDIT CODE ABOVE
 
 //CODE HERE
-
+for (let i = 0; i < lettersToPair.length; i++) {
+    for (let j = i+1; j < lettersToPair.length; j++) {
+        lettersToPair[j] === lettersToPair[i] && pairsArray.push([i,j]);
+        
+    }
+    
+}
     
 
 //////////////////////////////////PROBLEMS 11-14//////////////////////////////////
@@ -204,7 +210,12 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+function Dog(name, age, breed, tricks){
+    this.name = name;
+    this.age = age;
+    this.breed = breed;
+    this.tricks = tricks;
+}
 
 /*
     Invoke your dog constructor passing in 'Fido' for the name, 3 for the age, 
@@ -213,7 +224,7 @@ let pairsArray = []
 */
 
 //CODE HERE
-  
+  const fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake']);
 
 ////////////////////PROBLEM 12////////////////////
 /*
@@ -223,7 +234,9 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+function bark(){
+    return this.name +' says bark!';
+}
 
 /*
     Invoke the call method on bark, passing in fido as the context
@@ -231,7 +244,7 @@ let pairsArray = []
 */
 
 //CODE HERE
-  
+  let fidoSpeak = bark.call(fido);
   
 ////////////////////PROBLEM 13////////////////////
 /*
@@ -242,7 +255,9 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+function teachTrick(trick){
+    return [...this.tricks, trick];
+}
 
 /*
     Invoke the bind method on teachTrick, passing in fido as the context and the string 'stay' as a trick.
@@ -250,7 +265,7 @@ let pairsArray = []
 */
 
 //CODE HERE
-  
+let teachStay = teachTrick.bind(fido, 'stay');
   
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -261,7 +276,9 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+function dogIntro(treat, toy){
+    return `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}!`
+}
 
 /*
     Invoke the apply method on dogIntro, passing in fido as the context 
@@ -270,7 +287,7 @@ let pairsArray = []
 */
 
 //CODE HERE
-  
+  const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball']);
 
 ////////////////////PROBLEM 15////////////////////
 /*
@@ -280,7 +297,13 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+function Phone(brand, model, storage, color, sold){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.sold = sold;
+}
   
 /*
     Next make three new phones using your constructor function.
@@ -294,11 +317,11 @@ let pairsArray = []
 */
 
 //CODE HERE
-  // let phone1 = 
+  let phone1 = new Phone('Verizon', 'Horizon', 300, 'blue', false);
   
-  // let phone2 = 
+  let phone2 = new Phone('Apple', 'Snappl 5', 230, 'white', false);
   
-  // let phone3 = 
+  let phone3 = new Phone('Librum', 'Nospyphone', 9999, 'red', false);
   
 /*
     Last, add a prototype method to Phone.
@@ -309,5 +332,8 @@ let pairsArray = []
 */
 
 //CODE HERE
-
+Phone.prototype.sell = function(){
+    this.sold = true;
+    return `${this.brand} ${this.model} has been sold.`;
+}
   
